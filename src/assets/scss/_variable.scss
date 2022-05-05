@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+$current: #3F5D45;
+$primary: #2C4832;
+$secondary: #EAF0ED;
+$grey: #FFE180;
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $current;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+
+.d-none {
+  display: none;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+/* flex、alignment 與 cursor */
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* container */
+
+.container {
+  margin: 0 2.625rem;
+}
+
+/* row */
+.row {
+  display: flex;
+}
+
+/* col */
+.col {
+  width: 100%;
+}
+
+.col-4 {
+  flex: 0 0 30%;
+}
+
+.col-8 {
+  flex-grow: 0 0 70%;
+}
+
+
+/* margin */
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-15 {
+  margin-top: 3.75rem;
+}
+
+/* padding */
+.p-5 {
+  padding: 18px;
+}
+
+/* border */
+.border {
+  border-top: 1px solid $secondary;
+  border-left: 1px solid $secondary;
+  border-bottom: 1px solid $secondary;
+}
+
+.border-right {
+  border-right: 1px solid $secondary;
+}
