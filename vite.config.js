@@ -6,6 +6,13 @@ import { fileURLToPath, URL } from "url";
 export default defineConfig({
   plugins: [vue()],
   base: '/product-list/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/scss/_main.scss";'
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

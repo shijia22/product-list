@@ -154,7 +154,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/_variable.scss";
 
 .logo-all-dark {
   height: 40px;
