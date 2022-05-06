@@ -5,9 +5,7 @@
         alt="logo-all-dark" class="logo-all-dark"></div>
     <div class="d-flex nav-list">
       <ul class="d-flex justify-content-between">
-        <li>首頁</li>
-        <li>甜點</li>
-        <li>登入</li>
+        <li v-for="list in navList" :key="list.name"><a :href="list.link">{{ list.name }}</a></li>
       </ul>
       <div>
         <img
@@ -24,115 +22,28 @@
   <section class="container mt-15">
     <div class="row">
       <div class="col-4 mr-5">
+        <div class="category-title">甜點類別</div>
         <ul class="category">
-          <li>甜點類別</li>
-          <li>所有甜點（48）</li>
-          <li>本日精選（10）</li>
-          <li>人氣推薦（26）</li>
-          <li>新品上市（12）</li>
+          <li v-for="category in categories" :key="category.name">
+            <a :href="category.link">{{ category.name }}</a>
+          </li>
         </ul>
       </div>
       <div class="col-8">
         <ul class="product-list">
-          <li class="product">
+          <li class="product" v-for="product in productList" :key="product.img">
             <div class="produst-img">
               <img
                 src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
                 alt="favorite-border" class="favorite-border">
-              <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-1.png?raw=true"
-                alt="product-img">
+              <img :src="product.img" :alt="product.name">
               <div class="mark">
                 本日精選
               </div>
             </div>
             <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">焦糖馬卡龍</div>
-              <div class="product-price">NT$ 450</div>
-            </div>
-            <div class="shop-cart">加入購物車</div>
-          </li>
-          <li class="product">
-            <div class="produst-img">
-              <img
-                src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
-                alt="favorite-border" class="favorite-border">
-              <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-2.png?raw=true"
-                alt="product-img">
-              <div class="mark">
-                本日精選
-              </div>
-            </div>
-            <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">焦糖馬卡龍</div>
-              <div class="product-price">NT$ 450</div>
-            </div>
-            <div class="shop-cart">加入購物車</div>
-          </li>
-          <li class="product">
-            <div class="produst-img">
-              <img
-                src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
-                alt="favorite-border" class="favorite-border">
-              <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-3.png?raw=true"
-                alt="product-img">
-              <div class="mark">
-                本日精選
-              </div>
-            </div>
-            <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">焦糖馬卡龍</div>
-              <div class="product-price">NT$ 450</div>
-            </div>
-            <div class="shop-cart">加入購物車</div>
-          </li>
-          <li class="product">
-            <div class="produst-img">
-              <img
-                src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
-                alt="favorite-border" class="favorite-border">
-              <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-4.png?raw=true"
-                alt="product-img">
-              <div class="mark">
-                本日精選
-              </div>
-            </div>
-            <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">焦糖馬卡龍</div>
-              <div class="product-price">NT$ 450</div>
-            </div>
-            <div class="shop-cart">加入購物車</div>
-          </li>
-          <li class="product">
-            <div class="produst-img">
-              <img
-                src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
-                alt="favorite-border" class="favorite-border">
-              <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-5.png?raw=true"
-                alt="product-img">
-              <div class="mark">
-                本日精選
-              </div>
-            </div>
-            <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">焦糖馬卡龍</div>
-              <div class="product-price">NT$ 450</div>
-            </div>
-            <div class="shop-cart">加入購物車</div>
-          </li>
-          <li class="product">
-            <div class="produst-img">
-              <img
-                src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
-                alt="favorite-border" class="favorite-border">
-              <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-6.png?raw=true"
-                alt="product-img">
-              <div class="mark">
-                本日精選
-              </div>
-            </div>
-            <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">焦糖馬卡龍</div>
-              <div class="product-price">NT$ 450</div>
+              <div class="product-name">{{ product.name }}</div>
+              <div class="product-price">{{ product.price }}</div>
             </div>
             <div class="shop-cart">加入購物車</div>
           </li>
@@ -143,18 +54,92 @@
   <div class="container mt-8 mb-15">
     <div class="row">
       <div class="col d-flex flex-row flex-nowrap justify-content-end">
-        <div class="arrow border p-5"><img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_left.png?raw=true" alt="left-arrow"></div>
+        <div class="arrow border p-5"><img
+            src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_left.png?raw=true"
+            alt="left-arrow"></div>
         <div class="p-5 border">1</div>
         <div class="p-5 border">2</div>
         <div class="p-5 border">3</div>
-        <div class="arrow border border-right p-5"><img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_right.png?raw=true" alt="right-arrow" srcset=""></div>
+        <div class="arrow border border-right p-5"><img
+            src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_right.png?raw=true"
+            alt="right-arrow" srcset=""></div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<script setup>
+import { reactive } from 'vue'
 
+const categories = reactive([
+  {
+    name: '所有甜點（48）',
+    link: '#'
+  },
+  {
+    name: '本日精選（10）',
+    link: '#'
+  },
+  {
+    name: '人氣推薦（26）',
+    link: '#'
+  },
+  {
+    name: '新品上市（12）',
+    link: '#'
+  }
+])
+
+const navList = reactive([
+  {
+    name: '首頁',
+    link: '#'
+  },
+  {
+    name: '甜點',
+    link: '#'
+  },
+  {
+    name: '登入',
+    link: '#'
+  }
+])
+
+const productList = reactive([
+  {
+    name: '焦糖馬卡龍',
+    price: 'NT$ 450',
+    img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-1.png?raw=true'
+  },
+  {
+    name: '焦糖馬卡龍',
+    price: 'NT$ 450',
+    img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-2.png?raw=true'
+  },
+  {
+    name: '焦糖馬卡龍',
+    price: 'NT$ 450',
+    img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-3.png?raw=true'
+  },
+    {
+    name: '焦糖馬卡龍',
+    price: 'NT$ 450',
+    img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-4.png?raw=true'
+  },
+    {
+    name: '焦糖馬卡龍',
+    price: 'NT$ 450',
+    img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-5.png?raw=true'
+  },
+    {
+    name: '焦糖馬卡龍',
+    price: 'NT$ 450',
+    img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-6.png?raw=true'
+  }
+])
+</script>
+
+<style lang="scss" scoped>
 .logo-all-dark {
   height: 40px;
 }
@@ -171,6 +156,18 @@
   }
 }
 
+.category-title {
+  width: 100%;
+  padding: 1rem 4rem;
+  text-align: center;
+  font-size: 20px;
+  border-top: 1px solid $secondary;
+  border-right: 1px solid $secondary;
+  border-left: 1px solid $secondary;
+  color: $secondary;
+  background-color: $current;
+}
+
 .category {
   display: flex;
   flex-direction: column;
@@ -185,12 +182,7 @@
     border-bottom: 1px solid $secondary;
   }
 
-  & li:first-child {
-    color: $secondary;
-    background-color: $current;
-  }
-
-  & li:nth-child(2) {
+  & li:hover {
     background-color: $secondary;
   }
 }
@@ -207,7 +199,6 @@
 }
 
 .product {
-  width: 300px;
   margin-bottom: 1.25rem;
 }
 
@@ -251,5 +242,4 @@
   font-weight: bold;
   background-color: $secondary;
 }
-
 </style>
