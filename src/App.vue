@@ -1,11 +1,16 @@
 <template>
   <header class="container mt-10 d-flex align-items-center justify-content-between">
-    <div><img
-        src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg"
-        alt="logo-all-dark" class="logo-all-dark"></div>
-    <div class="d-flex nav-list">
+    <h1><a href="#">
+        <img
+          src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg"
+          alt="logo-all-dark" class="logo-all-dark">
+      </a>
+    </h1>
+    <div class="d-flex nav-list align-items-center">
       <ul class="d-flex justify-content-between">
-        <li v-for="list in navList" :key="list.name"><a :href="list.link">{{ list.name }}</a></li>
+        <a v-for="list in navList" :key="list.name" :href="list.link" class="d-clock p-1">
+          <li>{{ list.name }}</li>
+        </a>
       </ul>
       <div>
         <img
@@ -22,11 +27,11 @@
   <section class="container mt-15">
     <div class="row">
       <div class="col-4 mr-5">
-        <div class="category-title">甜點類別</div>
+        <h2 class="category-title">甜點類別</h2>
         <ul class="category">
-          <li v-for="category in categories" :key="category.name">
-            <a :href="category.link">{{ category.name }}</a>
-          </li>
+          <a v-for="category in categories" :key="category.name" :href="category.link">
+            <li>{{ category.name }}</li>
+          </a>
         </ul>
       </div>
       <div class="col-8">
@@ -37,15 +42,15 @@
                 src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/favorite_border.png?raw=true"
                 alt="favorite-border" class="favorite-border">
               <img :src="product.img" :alt="product.name">
-              <div class="mark">
+              <span class="mark">
                 本日精選
-              </div>
+              </span>
             </div>
             <div class="d-flex align-content-center justify-content-between product-info">
-              <div class="product-name">{{ product.name }}</div>
-              <div class="product-price">{{ product.price }}</div>
+              <h3 class="product-name">{{ product.name }}</h3>
+              <p class="product-price">{{ product.price }}</p>
             </div>
-            <div class="shop-cart">加入購物車</div>
+            <button class="shop-cart">加入購物車</button>
           </li>
         </ul>
       </div>
@@ -121,17 +126,17 @@ const productList = reactive([
     price: 'NT$ 450',
     img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-3.png?raw=true'
   },
-    {
+  {
     name: '焦糖馬卡龍',
     price: 'NT$ 450',
     img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-4.png?raw=true'
   },
-    {
+  {
     name: '焦糖馬卡龍',
     price: 'NT$ 450',
     img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-5.png?raw=true'
   },
-    {
+  {
     name: '焦糖馬卡龍',
     price: 'NT$ 450',
     img: 'https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/p-6.png?raw=true'
@@ -238,6 +243,7 @@ const productList = reactive([
 }
 
 .shop-cart {
+  width: 100%;
   padding: 1rem 5.625rem;
   font-weight: bold;
   background-color: $secondary;
