@@ -8,7 +8,7 @@
     </h1>
     <div class="d-flex nav-list align-items-center">
       <ul class="d-flex justify-content-between">
-        <a v-for="list in navList" :key="list.name" :href="list.link" class="d-clock p-1">
+        <a v-for="list in navList" :key="list.name" :href="list.link" class="d-block p-1">
           <li>{{ list.name }}</li>
         </a>
       </ul>
@@ -59,15 +59,24 @@
   <div class="container mt-8 mb-15">
     <div class="row">
       <div class="col d-flex flex-row flex-nowrap justify-content-end">
-        <div class="arrow border p-5"><img
-            src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_left.png?raw=true"
-            alt="left-arrow"></div>
-        <div class="p-5 border">1</div>
-        <div class="p-5 border">2</div>
-        <div class="p-5 border">3</div>
-        <div class="arrow border border-right p-5"><img
+        <a href="#" class="arrow d-block border p-5">
+          <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_left.png?raw=true"
+            alt="left-arrow">
+        </a>
+        <ul class="d-flex">
+          <a href="#" class="p-5 border d-block">
+            <li>1</li>
+          </a>
+          <a href="#" class="p-5 border d-block">
+            <li>2</li>
+          </a>
+          <a href="#" class="p-5 border d-block">
+            <li>3</li>
+          </a>
+        </ul>
+        <a href="#" class="arrow d-block border border-right p-5"><img
             src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_right.png?raw=true"
-            alt="right-arrow" srcset=""></div>
+            alt="right-arrow" srcset=""></a>
       </div>
     </div>
   </div>
@@ -181,14 +190,17 @@ const productList = reactive([
   font-size: 20px;
   border: 1px solid $secondary;
 
-  & li {
+  & a {
     width: 100%;
-    padding: 1rem 4rem;
-    border-bottom: 1px solid $secondary;
+
+    &:hover {
+      background-color: $secondary;
+    }
   }
 
-  & li:hover {
-    background-color: $secondary;
+  & li {
+    padding: 1rem 4rem;
+    border-bottom: 1px solid $secondary;
   }
 }
 
