@@ -184,3 +184,19 @@ body {
 .border-right {
   border-right: 1px solid $secondary;
 }
+
+/* navlist */
+
+.hover-nav-list {
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+/* page */
+.page-nav-list {
+  &:hover {
+    color: antiquewhite;
+    background-color: $primary;
+  }
+}

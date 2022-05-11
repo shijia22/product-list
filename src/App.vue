@@ -8,7 +8,7 @@
     </h1>
     <div class="d-flex nav-list align-items-center">
       <ul class="d-flex justify-content-between">
-        <a v-for="list in navList" :key="list.name" :href="list.link" class="d-block p-1">
+        <a v-for="list in navList" :key="list.name" :href="list.link" class="d-block p-4 hover-nav-list">
           <li>{{ list.name }}</li>
         </a>
       </ul>
@@ -64,14 +64,14 @@
             alt="left-arrow">
         </a>
         <ul class="d-flex">
-          <a href="#" class="p-5 border d-block">
-            <li>1</li>
+          <a href="#" class="p-5 border d-block page-nav-list">
+            1
           </a>
-          <a href="#" class="p-5 border d-block">
-            <li>2</li>
+          <a href="#" class="p-5 border d-block page-nav-list">
+            2
           </a>
-          <a href="#" class="p-5 border d-block">
-            <li>3</li>
+          <a href="#" class="p-5 border d-block page-nav-list">
+            3
           </a>
         </ul>
         <a href="#" class="arrow d-block border border-right p-5"><img
@@ -155,17 +155,17 @@ const productList = reactive([
 
 <style lang="scss" scoped>
 .logo-all-dark {
-  height: 40px;
+  height: 2.5rem;
 }
 
 .shopping-cart {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .nav-list {
   & ul {
-    margin-right: 80px;
+    margin-right: 5rem;
     min-width: 215px;
   }
 }
@@ -259,5 +259,10 @@ const productList = reactive([
   padding: 1rem 5.625rem;
   font-weight: bold;
   background-color: $secondary;
+
+  &:hover {
+    color: $secondary;
+    background-color: $primary;
+  }
 }
 </style>
